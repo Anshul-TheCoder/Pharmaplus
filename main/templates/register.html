@@ -1,0 +1,162 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div class="site-wrap">
+
+
+    <div class="site-navbar py-2">
+
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+            <div class="site-logo">
+              <a href="index.html" class="js-logo-clone">PharmaPlus</a>
+            </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li><a href="{% url 'pharmaplus:index' %}">Home</a></li>
+                <li><a href="{% url 'pharmaplus:about' %}">About</a></li>
+                <li class="active"><a href="{% url 'pharmaplus:contact' %}">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0">
+            <a href="{% url 'pharmaplus:index' %}">Home</a> <span class="mx-2 mb-0">/</span>
+            <strong class="text-black">Register</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">Register</h2>
+          </div>
+          <div class="col-md-12">
+    
+            <form action="#" method="post">
+              {% csrf_token %}
+              <div class="p-3 p-lg-5 border">
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="c_fname" name="c_fname">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="c_lname" name="c_lname">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="c_uname" class="text-black">Username <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="c_uname" name="c_uname">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="c_email" name="c_email" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_pass1" class="text-black">Password <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="c_pass1" name="c_pass1">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="c_pass2" class="text-black">Re-enter Password <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="c_pass2" name="c_pass2">
+                  </div>
+                </div>
+                <div>
+                  <div></div>
+                  <div class="form-group-row">
+                    <input type="radio" name="type_of_user" value="consumer" checked><label for="c_subject" class="text-black">Consumer </label><br>
+                    <input type="radio" name="type_of_user" value="pharmacy"><label for="c_subject" class="text-black">Pharmacy </label><br>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="REgister">
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="site-section bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-white mb-4">Offices</h2>
+          </div>
+          <div class="col-lg-4">
+            <div class="p-4 bg-white mb-3 rounded">
+              <span class="d-block text-black h6 text-uppercase">Room 40</span>
+              <p class="mb-0">Dr. C V Raman, IIT-BHU, BHU, varanasi, UP, 220015</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="p-4 bg-white mb-3 rounded">
+              <span class="d-block text-black h6 text-uppercase">Room 39</span>
+              <p class="mb-0">Dr. C V Raman, IIT-BHU, BHU, varanasi, UP, 220015</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="p-4 bg-white mb-3 rounded">
+              <span class="d-block text-black h6 text-uppercase">Room 13</span>
+              <p class="mb-0">Dr. C V Raman, IIT-BHU, BHU, varanasi, UP, 220015</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">About Us</h3>
+              <p>We at PharmaPlus tend to bring a revolution in the world of medicine.</p>
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Contact Info</h3>
+              <ul class="list-unstyled">
+                <li class="address">Room 39,40, Dr. C V Raman, IIT-BHU, BHU, varanasi, UP, 220015</li>
+                <li class="phone"><a href="tel://8077967615">8077967615</a></li>
+                <li class="email">aayusharora.cse18@itbhu.ac.in</li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+{% endblock %}

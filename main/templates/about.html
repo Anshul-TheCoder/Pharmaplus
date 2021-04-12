@@ -1,0 +1,165 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+
+{% block content %}
+
+  <div class="site-wrap">
+
+    <div class="site-navbar py-2">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+            <div class="site-logo">
+              <a href="" class="js-logo-clone">PharmaPlus</a>
+            </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li ><a href="{% url 'pharmaplus:index' %}">Home</a></li>
+                <li class="active"><a href="{% url 'pharmaplus:about' %}">About</a></li>
+                <li><a href="{% url 'pharmaplus:contact' %}">Contact Us</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'pharmaplus:logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'pharmaplus:login' %}">Login</a></li>
+                <li><a href="{% url 'pharmaplus:register'%}">Register</a></li>
+                {% endif %}
+              </ul>
+            </nav> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-blocks-cover inner-page" style="background-image: url({% static 'images/hero_1.jpg' %});">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto align-self-center">
+            <div class=" text-center">
+              <h1>About Us</h1>
+              <p>How many times have you wondered from where to get your medicine? Will it be in stock or your trip to the pharmacy would just go in vain? Which pharmay should you go to ensure the availability and also save your time? We at pharmaplus plan on changin your whole experience of midicine shopping.Just type up what you need and voila!!!</p>ˀ
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-light custom-border-bottom" data-aos="fade">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <div class="block-16">
+              <figure>
+                <img src="{% static 'images/bg_1.jpg' %}" alt="Image placeholder" class="img-fluid rounded">
+                <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span
+                    class="icon-play"></span></a>    
+              </figure>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5">        
+            <div class="site-section-heading pt-3 mb-4">
+              <h2 class="text-black">Why PharmaPlus?</h2>
+            </div>
+            <p>
+              How many times have you wondered from where to get your medicine? Will it be in stock or your trip to the pharmacy would just go in vain? Which pharmay should you go to ensure the availability and also save your time? We at pharmaplus plan on changin your whole experience of midicine shopping.Just type up what you need and voila!!!
+            </p>    
+          </div>
+        </div>
+      </div>
+    </div>
+
+        
+    
+
+    <div class="site-section bg-light custom-border-bottom" data-aos="fade">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 site-section-heading text-center pt-4">
+            <h2>The Team</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-6 mb-5">
+    
+            <div class="block-38 text-center">
+              <div class="block-38-img">
+                <div class="block-38-header">
+                  <img src="{% static 'images/person_4.jpg' %}" alt="Image placeholder" class="mb-4">
+                  <h3 class="block-38-heading h4">Aayush Arora</h3>
+                  <p class="block-38-subheading">CEO/Co-Founder/Frontend/Backend Desgner</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 mb-5">
+            <div class="block-38 text-center">
+              <div class="block-38-img">
+                <div class="block-38-header">
+                  <img src="{% static 'images/person_2.jpg' %}" alt="Image placeholder" class="mb-4">
+                  <h3 class="block-38-heading h4">Anshul Raman</h3>
+                  <p class="block-38-subheading">Co-Founder/backend/frontend Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 mb-5">
+            <div class="block-38 text-center">
+              <div class="block-38-img">
+                <div class="block-38-header">
+                  <img src="{% static 'images/person_3.jpg' %}" alt="Image placeholder" class="mb-4">
+                  <h3 class="block-38-heading h4">Harsh B parmar</h3>
+                  <p class="block-38-subheading">Financial and Technical Advisor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 mb-5">
+            <div class="block-38 text-center">
+              <div class="block-38-img">
+                <div class="block-38-header">
+                  <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder" class="mb-4">
+                  <h3 class="block-38-heading h4">Himanshu</h3>
+                  <p class="block-38-subheading">Intern</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">About Us</h3>
+              <p>We at PharmaPlus tend to bring a revolution in the world of medicine. </p>
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Contact Info</h3>
+              <ul class="list-unstyled">
+                <li class="address">room no. 39,40 Dr. C V Raman Hostel,IIT-BHU,BHU,varanasi,220015</li>
+                <li class="phone"><a href="tel://8077967615">8077967615</a></li>
+                <li class="email">aayusharora.cse18@itbhuac.in</li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+{% endblock %}

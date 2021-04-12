@@ -1,0 +1,114 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="site-wrap">
+
+
+        <div class="site-navbar py-2">
+          <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="logo">
+                <div class="site-logo">
+                  <a href="" class="js-logo-clone">PharmaPlus</a>
+                </div>
+              </div>
+              <div class="main-nav d-none d-lg-block">
+                <nav class="site-navigation text-right text-md-center" role="navigation">
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li class="active"><a href="{% url 'pharmaplus:index' %}">Home</a></li>
+                    <li><a href="{% url 'pharmaplus:about' %}">About</a></li>
+                    <li><a href="{% url 'pharmaplus:contact' %}">Contact Us</a></li>
+                    {% if user.is_authenticated %}
+                      <li><a href="{% url 'pharmaplus:logout' %}">Logout</a></li>
+                    {% else %}
+                      <li><a href="{% url 'pharmaplus:login' %}">Login</a></li>
+                      <li><a href="{% url 'pharmaplus:register'%}">Register</a></li>
+                    {% endif %}
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+        
+
+        <!-- <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for store in stores 
+              <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <td>{{store.name}}</td>
+              <td>{{store.address}}</td>
+              <td>{{store.phone}}</td>
+            </tr>
+              {% endfor 
+            </tbody>
+        </table> -->
+
+        
+        <div class="card-columns">
+        {% for store in stores %}
+          <div class="card" style="width: 30rem;">
+            <img class="card-img-top" src="{% static 'pharmacy.jpeg' %}" alt="pharmacy image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{store.name}}</h5>
+              <p class="card-text">{{store.address}}</p>
+            </div>
+            <div class="card-body">
+              <a href="tel://{{store.phone}}" class="card-link">Contact Us</a>
+              <a href="#" class="card-link">Directions</a>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+
+        
+
+
+
+
+    
+        <footer class="site-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+    
+                <div class="block-7">
+                  <h3 class="footer-heading mb-4">About Us</h3>
+                  <p>We at PharmaPlus tend to bring a revolution in the world of medicine.</p>
+                </div>
+    
+              </div>
+    
+              <div class="col-md-6 col-lg-3">
+                <div class="block-5 mb-5">
+                  <h3 class="footer-heading mb-4">Contact Info</h3>
+                  <ul class="list-unstyled">
+                    <li class="address">room no. 39,40 Dr. C V Raman Hostel,IIT-BHU,BHU,varanasi,220015</li>
+                    <li class="phone"><a href="tel://8077967615">8077967615</a></li>
+                    <li class="email">aayusharora.cse18@itbhu.ac.in</li>
+                  </ul>
+                </div>
+    
+    
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    
+
+{% endblock %}
